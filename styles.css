@@ -1,0 +1,733 @@
+/* Reset some basic styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out; /* Smooth transition */
+}
+
+body {
+    background-color: #f9f9f9;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease-in-out; /* Smooth transition */
+}
+
+header {
+    background-color: rgba(20, 20, 20, 0.8);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    font-weight: bold;
+    font-size: 1.8em;
+    margin: 0;
+}
+
+nav {
+    margin-top: 15px;
+}
+
+/* Header button styling */
+nav button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+/* Header button hover effect */
+nav button:hover {
+    background-color: #45a049;
+}
+
+main {
+    margin: 40px auto;
+    max-width: 1200px;
+    padding: 0 10px;
+}
+
+section {
+    display: none;
+    height: 100vh;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#dashboard {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px; /* Added padding for smaller screens */
+}
+
+#dashboard h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Dashboard Stats section */
+.dashboard-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Stat card styling */
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the titles in the stat cards */
+.stat-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styling for the counters inside stat cards */
+.stat-card p {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+/* Kanban container styling */
+#kanban {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    flex-direction: column;
+    padding: 20px;
+}
+
+#kanban h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Kanban board styling */
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Allows columns to wrap */
+}
+
+/* Kanban column styling */
+.column {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.column:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Column title styling */
+.column h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Task list styling */
+.task-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Task card styling */
+.task-card {
+    flex: 1;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    margin-bottom: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* "Add Task" button styling */
+.column button {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.column button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+
+/* Todo Section Full-Page Background */
+#todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;  /* Full viewport height */
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Todo Header */
+#todo h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Input and Button Styles for Todo Section */
+#todo input[type="text"],
+#todo button {
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    transition: transform 0.2s ease;
+}
+
+/* Input field with semi-transparency */
+#todo input[type="text"] {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    width: 80%;  /* Adjust width based on preference */
+    max-width: 500px;
+    text-align: center;
+    outline: none;
+}
+
+/* Button with semi-transparent bubble appearance */
+#todo button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    cursor: pointer;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#todo button:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Todo List Display */
+#todoList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Individual Todo Items */
+#todoList li {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Todo item hover effect */
+#todoList li:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
+}
+
+/* Reminders Section Full-Page Background */
+#reminders {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    width: 100%;
+    background-image: url('path-to-your-reminders-background-image.jpg'); /* Add your background image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Reminders Header */
+#reminders h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+/* Input and Button Styles for Reminders Section */
+#reminders input[type="text"],
+#reminders input[type="datetime-local"],
+#reminders button {
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    transition: transform 0.2s ease;
+}
+
+/* Text input and DateTime input with semi-transparency */
+#reminders input[type="text"],
+#reminders input[type="datetime-local"] {
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+    width: 80%; /* Adjust width based on preference */
+    max-width: 500px;
+    text-align: center;
+    outline: none;
+}
+
+/* Add Reminder button with bubble-like appearance */
+#reminders button {
+    background-color: rgba(255, 255, 255, 0.9);
+    color: #333;
+    cursor: pointer;
+    width: 80%;
+    max-width: 500px;
+    text-align: center;
+    font-weight: bold;
+}
+
+#reminders button:hover {
+    transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Reminders List Display */
+#reminderList {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 20px;
+    width: 80%;
+    max-width: 500px;
+}
+
+/* Individual Reminder Items */
+#reminderList li {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Reminder item hover effect */
+#reminderList li:hover {
+    transform: scale(1.03);
+    transition: transform 0.2s ease;
+}
+
+/* Responsive adjustments for the header */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    header h1 {
+        font-size: 1.5em;
+        margin-bottom: 10px;
+    }
+
+    nav button {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+}
+
+/* Responsive adjustments for sections */
+@media (max-width: 768px) {
+    section {
+        flex-direction: column;
+        padding: 10px;
+    }
+}
+
+#dashboard {
+    display: block;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+}
+
+#dashboard h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Dashboard Stats */
+.dashboard-stats {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.stat-card {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 25px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .stat-card {
+        width: 80%;
+    }
+}
+
+#kanban {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+    text-align: center;
+    flex-direction: column;
+}
+
+#kanban h2 {
+    font-size: 2em;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #000000;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.4);
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+/* Kanban board */
+.kanban-board {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    gap: 30px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.column {
+    background-color: rgba(255, 255, 255, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    flex: 1;
+    overflow-y: auto;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.column:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .column {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+.task-card {
+    flex: 1;
+    width: 90%;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(5px);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.column button {
+    background-color: rgba(255, 255, 255, 0.7);
+    color: #333;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.column button:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+#reminders, #todo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+#reminders h2, #todo h2 {
+    font-size: 2em;
+    color: #fff;
+    margin-bottom: 20px;
+    text-shadow: 0px 4px 6px rgba(0, 0, 0, 0.4);
+}
+
+#reminders input[type="text"], #reminders input[type="datetime-local"], #reminders button,
+#todo input[type="text"], #todo button {
+    padding: 12px 20px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    font-size: 1.1em;
+    transition: transform 0.2s ease;
+    width: 80%;
+    max-width: 500px;
+}
+
+#reminderList li, #todoList li {
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    font-size: 1em;
+    color: #333;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    max-width: 500px;
+}
+
+@media (max-width: 768px) {
+    #reminderList li, #todoList li, #reminders input[type="text"], #reminders button,
+    #todo input[type="text"], #todo button {
+        width: 90%;
+    }
+
+    header h1, #dashboard h2, #kanban h2, #todo h2, #reminders h2 {
+        font-size: 1.5em;
+    }
+
+    .stat-card, .column, .task-card {
+        width: 100%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+    #dashboard h2 {
+        font-size: 1.8em; /* Slightly smaller heading on tablets */
+    }
+
+    .stat-card {
+        width: 200px; /* Smaller card width on tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    #dashboard {
+        padding: 15px; /* Additional padding for mobile */
+    }
+
+    #dashboard h2 {
+        font-size: 1.5em; /* Smaller font size for heading on mobile */
+    }
+
+    .dashboard-stats {
+        gap: 15px;
+        justify-content: center; /* Center cards on mobile */
+    }
+
+    .stat-card {
+        width: 100%; /* Full-width cards on mobile */
+        max-width: 300px;
+    }
+}
+
+/* Responsive kanban adjustments */
+@media (max-width: 1024px) {
+    #kanban h2 {
+        font-size: 1.8em;
+    }
+
+    .column {
+        width: 45%; /* Two columns layout for tablets */
+        padding: 15px;
+    }
+
+    .kanban-board {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    #kanban h2 {
+        font-size: 1.5em;
+    }
+
+    .kanban-board {
+        flex-direction: column; /* Stack columns vertically on mobile */
+        align-items: center;
+    }
+
+    .column {
+        width: 100%;
+        padding: 15px;
+        max-width: 500px; /* Limits column width for readability */
+    }
+
+    .column h3 {
+        font-size: 1.2em;
+    }
+
+    .task-card {
+        padding: 15px;
+        width: 100%; /* Full width for task cards on mobile */
+    }
+
+    .column button {
+        width: 100%; /* Full width for button on mobile */
+    }
+}
